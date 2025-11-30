@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trashup - Sustainable Waste Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background: #f8fdf8;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(34, 139, 34, 0.1);
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #2d8659, #5cb85c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2d5016;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #5cb85c;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #5cb85c, #2d8659);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(92, 184, 92, 0.4);
+        }
+
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            padding: 4rem 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            color: #2d5016;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            color: #4a6741;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.3s backwards;
+        }
+
+        .floating-icon {
+            font-size: 5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .features {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f1f8f4, #e8f5e9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(45, 134, 89, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2d5016;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #4a6741;
+            line-height: 1.6;
+        }
+
+        .stats {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #2d8659, #5cb85c);
+            color: white;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            padding: 6rem 5%;
+            background: #f8fdf8;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: #4a6741;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌱 Trashup</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Turn Waste Into Worth</h1>
+                <p>Join the sustainable revolution. Smart waste management for a cleaner, greener tomorrow.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button">Start Your Journey</button>
+                    <button class="cta-button" style="background: transparent; color: #2d8659; border: 2px solid #2d8659;">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-icon">♻️</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="features-container">
+            <h2 class="section-title">Why Choose Trashup?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Reduce your carbon footprint with our innovative recycling solutions that prioritize the planet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Smart Tracking</h3>
+                    <p>Monitor your waste reduction progress with real-time analytics and personalized insights.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Circular Economy</h3>
+                    <p>Transform waste into resources through our comprehensive recycling and upcycling programs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💚</div>
+                    <h3>Community Impact</h3>
+                    <p>Join thousands of eco-warriors making a real difference in their communities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast & Easy</h3>
+                    <p>Simple scheduling, convenient pickup, and hassle-free waste management at your fingertips.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Rewards Program</h3>
+                    <p>Earn points for every sustainable action and redeem them for amazing eco-friendly products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h2>500K+</h2>
+                <p>Tons Recycled</p>
+            </div>
+            <div class="stat-item">
+                <h2>10K+</h2>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-item">
+                <h2>95%</h2>
+                <p>Waste Diverted</p>
+            </div>
+            <div class="stat-item">
+                <h2>50+</h2>
+                <p>Cities Served</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join Trashup today and be part of the solution. Together, we can create a cleaner, more sustainable world for future generations.</p>
+            <button class="cta-button" style="font-size: 1.1rem; padding: 1rem 3rem;">Sign Up Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Trashup. All rights reserved. Making the world greener, one pickup at a time.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .stat-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
