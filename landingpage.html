@@ -88,31 +88,34 @@
 
         .hero {
             margin-top: 80px;
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
             position: relative;
             overflow: hidden;
+            padding: 4rem 0;
         }
 
         .hero-content {
             max-width: 1200px;
-            padding: 4rem 5%;
+            width: 100%;
+            padding: 2rem 5%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6rem;
             align-items: center;
             z-index: 1;
         }
 
         .hero-text h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #2d5016;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            line-height: 1.1;
             animation: fadeInUp 0.8s ease;
+            font-weight: 700;
         }
 
         @keyframes fadeInUp {
@@ -127,26 +130,34 @@
         }
 
         .hero-text p {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: #4a6741;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
             animation: fadeInUp 0.8s ease 0.2s backwards;
+            max-width: 550px;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
             animation: fadeInUp 0.8s ease 0.4s backwards;
+            flex-wrap: wrap;
         }
 
         .hero-visual {
             position: relative;
             animation: fadeInUp 0.8s ease 0.3s backwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
         }
 
         .floating-icon {
-            font-size: 5rem;
+            font-size: 15rem;
             animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 30px rgba(45, 134, 89, 0.2));
         }
 
         @keyframes float {
@@ -255,6 +266,153 @@
             margin-bottom: 2rem;
         }
 
+        .contact-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f1f8f4, #e8f5e9);
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(45, 134, 89, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #5cb85c, #2d8659);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .contact-details h3 {
+            color: #2d5016;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: #4a6741;
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form-wrapper {
+            background: linear-gradient(135deg, #f1f8f4, #e8f5e9);
+            padding: 2.5rem;
+            border-radius: 20px;
+        }
+
+        .contact-form-wrapper h3 {
+            color: #2d5016;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form .form-group label {
+            display: block;
+            color: #2d5016;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-form .form-group input,
+        .contact-form .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #d4edda;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: white;
+        }
+
+        .contact-form .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form .form-group input:focus,
+        .contact-form .form-group textarea:focus {
+            outline: none;
+            border-color: #5cb85c;
+        }
+
+        .contact-form .submit-button {
+            margin-top: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #5cb85c, #2d8659);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(92, 184, 92, 0.4);
+        }
+
         footer {
             background: #2d5016;
             color: white;
@@ -262,14 +420,250 @@
             text-align: center;
         }
 
+        /* MODAL STYLES START HERE */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 80, 22, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #4a6741;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+            color: #2d5016;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header p {
+            color: #4a6741;
+            font-size: 0.95rem;
+        }
+
+        .auth-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 0.8rem;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid #e8f5e9;
+            color: #4a6741;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            border-bottom-color: #5cb85c;
+            color: #2d5016;
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2d5016;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e8f5e9;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: #f8fdf8;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #5cb85c;
+            background: white;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #5cb85c, #2d8659);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(92, 184, 92, 0.4);
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #4a6741;
+            font-size: 0.9rem;
+        }
+
+        .form-footer a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: none;
+            border-left: 4px solid #c62828;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .success-message {
+            background: #e8f5e9;
+            color: #2d8659;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: none;
+            border-left: 4px solid #5cb85c;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        /* MODAL STYLES END HERE */
+
         @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 3rem 0;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 3rem;
+                padding: 2rem 5%;
             }
 
             .hero-text h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+
+            .hero-visual {
+                min-height: 250px;
+            }
+
+            .floating-icon {
+                font-size: 10rem;
             }
 
             .nav-links {
@@ -279,19 +673,32 @@
             .hero-buttons {
                 justify-content: center;
             }
+
+            .modal-content {
+                padding: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">🌱 Trashup</div>
+            <div class="logo">🌱 TrashUp</div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#impact">Impact</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Get Started</a>
+            <button class="cta-button" id="joinNowBtn">Join Now</button>
         </nav>
     </header>
 
@@ -313,7 +720,7 @@
 
     <section id="features" class="features">
         <div class="features-container">
-            <h2 class="section-title">Why Choose Trashup?</h2>
+            <h2 class="section-title">Why Choose TrashUp?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
@@ -378,18 +785,355 @@
         </div>
     </section>
 
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="text-align: center; color: #4a6741; font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem;">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>123 Baliwasan Rd.<br>7000 Zamboanga City<br>Philippines</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:info@trashup.com">info@trashup.com</a><br>
+                            <a href="mailto:support@trashup.com">support@trashup.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>Main: <a href="tel:+639123456789">+63 912 345 6789</a><br>
+                            Support: <a href="tel:+639987654321">+63 998 765 4321</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
+                            Saturday: 9:00 AM - 4:00 PM<br>
+                            Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-details">
+                            <h3>Follow Us</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link" title="Facebook">f</a>
+                                <a href="#" class="social-link" title="Twitter">𝕏</a>
+                                <a href="#" class="social-link" title="Instagram">🅾</a>
+                                <a href="#" class="social-link" title="LinkedIn">in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3>Send Us a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" placeholder="How can we help?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" placeholder="Tell us more about your inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Trashup. All rights reserved. Making the world greener, one pickup at a time.</p>
+        <p>&copy; 2025 TrashUp. All rights reserved. Making the world greener, one pickup at a time.</p>
     </footer>
 
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            
+            <div class="modal-header">
+                <h2>🌱 Welcome to TrashUp</h2>
+                <p>Join the sustainable revolution today</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+            </div>
+
+            <form class="auth-form active" id="loginForm">
+                <div class="error-message" id="loginError"></div>
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="submit-button">Login</button>
+                <div class="form-footer">
+                    Forgot password? <a href="#">Reset here</a>
+                </div>
+            </form>
+
+            <form class="auth-form" id="signupForm">
+                <div class="success-message" id="signupSuccess"></div>
+                <div class="error-message" id="signupError"></div>
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="submit-button">Create Account</button>
+                <div class="form-footer">
+                    By signing up, you agree to our <a href="#">Terms</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
+        const modal = document.getElementById('authModal');
+        const closeModal = document.getElementById('closeModal');
+        const authTabs = document.querySelectorAll('.auth-tab');
+        const authForms = document.querySelectorAll('.auth-form');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const loginError = document.getElementById('loginError');
+        const signupError = document.getElementById('signupError');
+        const signupSuccess = document.getElementById('signupSuccess');
+
+        // Simple in-memory storage for registered users (for demo purposes)
+        // In production, this would be handled by a backend database
+        let registeredUsers = [];
+
+        // Helper function to show error messages
+        function showError(element, message) {
+            element.textContent = message;
+            element.classList.add('show');
+            setTimeout(() => {
+                element.classList.remove('show');
+            }, 5000);
+        }
+
+        // Helper function to show success messages
+        function showSuccess(element, message) {
+            element.textContent = message;
+            element.classList.add('show');
+            setTimeout(() => {
+                element.classList.remove('show');
+            }, 3000);
+        }
+
+        // Check if user is registered
+        function isUserRegistered(email) {
+            return registeredUsers.some(user => user.email.toLowerCase() === email.toLowerCase());
+        }
+
+        // Validate login credentials
+        function validateLogin(email, password) {
+            const user = registeredUsers.find(user => 
+                user.email.toLowerCase() === email.toLowerCase()
+            );
+            
+            if (!user) {
+                return { valid: false, message: '❌ Account not found! Please sign up first.' };
+            }
+            
+            if (user.password !== password) {
+                return { valid: false, message: '❌ Incorrect password. Please try again.' };
+            }
+            
+            return { valid: true, user: user };
+        }
+
+        // Open modal on CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const buttonText = button.textContent.trim();
+                // Open modal for Join Now, Sign Up, or Start Your Journey buttons
+                if (buttonText.includes('Join') || buttonText.includes('Sign Up') || buttonText.includes('Start')) {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Clear any previous error messages
+                    loginError.classList.remove('show');
+                    signupError.classList.remove('show');
+                    signupSuccess.classList.remove('show');
+                    
+                    // If it's a Sign Up button, switch to signup tab
+                    if (buttonText.includes('Sign Up')) {
+                        const signupTab = document.querySelector('[data-tab="signup"]');
+                        signupTab.click();
+                    }
+                }
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            // Clear forms
+            loginForm.reset();
+            signupForm.reset();
+            loginError.classList.remove('show');
+            signupError.classList.remove('show');
+            signupSuccess.classList.remove('show');
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                loginForm.reset();
+                signupForm.reset();
+                loginError.classList.remove('show');
+                signupError.classList.remove('show');
+                signupSuccess.classList.remove('show');
+            }
+        });
+
+        // Tab switching
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabName = tab.getAttribute('data-tab');
+                
+                authTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                authForms.forEach(form => {
+                    form.classList.remove('active');
+                    if (form.id === `${tabName}Form`) {
+                        form.classList.add('active');
+                    }
+                });
+                
+                // Clear error messages when switching tabs
+                loginError.classList.remove('show');
+                signupError.classList.remove('show');
+                signupSuccess.classList.remove('show');
+            });
+        });
+
+        // Login form submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            const validation = validateLogin(email, password);
+            
+            if (!validation.valid) {
+                showError(loginError, validation.message);
+                return;
+            }
+            
+            // Successful login
+            alert(`🎉 Welcome back, ${validation.user.name}! You're now logged in to TrashUp.`);
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            loginForm.reset();
+        });
+
+        // Signup form submission
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+            
+            // Check if email is already registered
+            if (isUserRegistered(email)) {
+                showError(signupError, '❌ This email is already registered! Please login instead.');
+                return;
+            }
+            
+            // Validate password strength
+            if (password.length < 6) {
+                showError(signupError, '❌ Password must be at least 6 characters long.');
+                return;
+            }
+            
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                showError(signupError, '❌ Passwords do not match! Please try again.');
+                return;
+            }
+            
+            // Register the user
+            registeredUsers.push({
+                name: name,
+                email: email,
+                password: password
+            });
+            
+            showSuccess(signupSuccess, '✅ Account created successfully!');
+            
+            // Switch to login tab after 2 seconds
+            setTimeout(() => {
+                const loginTab = document.querySelector('[data-tab="login"]');
+                loginTab.click();
+                signupForm.reset();
+                // Pre-fill the email in login form
+                document.getElementById('loginEmail').value = email;
+                showSuccess(loginError, '✅ Please login with your new account!');
+            }, 2000);
+        });
+        // MODAL JAVASCRIPT ENDS HERE
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
             });
         });
@@ -411,6 +1155,17 @@
         document.querySelectorAll('.feature-card, .stat-item').forEach(el => {
             observer.observe(el);
         });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value;
+                alert(`Thank you for your message, ${name}! We'll get back to you within 24 hours.`);
+                contactForm.reset();
+            });
+        }
     </script>
 </body>
 </html>
